@@ -183,23 +183,23 @@ using namespace std;
 //    return 0;
 //}
 // 1.下面程序编译运行结果是？ A、编译报错 B、运行崩溃 C、正常运行
-class A
-{
-public:
-    void PrintA()
-    {
-        cout << _a << endl;//空对象无成员变量
-    }
-private:
-    int _a;
-};
-int main()
-{
-    A* p = new A();
-    new(p)A;
-    new(p)A;
-    new(p)A;
-
-    p->PrintA();
-    return 0;
-}
+//class A
+//{
+//public:
+//    void PrintA()
+//    {
+//        cout << _a << endl;//空对象无成员变量
+//    }
+//private:
+//    int _a;
+//};
+//int main()
+//{
+//    A* p = new A();
+//    new(p)A;
+//    new(p)A;
+//    new(p)A;
+//
+//    p->PrintA();
+//    return 0;
+//}
