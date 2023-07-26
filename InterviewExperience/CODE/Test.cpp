@@ -49,7 +49,7 @@ int main()
 	B b;
 	A *a = &b;
 
-	b.func();
+	b.A::func();
 	//b.func1();
 	a->func();
 	a->func1();
