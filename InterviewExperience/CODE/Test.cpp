@@ -5,67 +5,67 @@
 
 using namespace std;
 
-//class A
-//{
-//public:
-//	A()
-//	{
-//		cout << "I am A" << endl;
-//		func2(); // 此时B类对象还未初始化vtable, vptr指向的是A类的vtable，里面全是A的成员函数
-//	}
-//	void func()
-//	{
-//		cout << "I am A::func" << endl;
-//		func2();
-//	}
-//	virtual void func1()
-//	{
-//		cout << "I am A::func1" << endl;
-//		func2();
-//	}
-//private:
-//	virtual void func2()
-//	{
-//		cout << "I am A::func2" << endl;
-//	}
-//};
-//class B : public A
-//{
-//public:
-//	B()
-//	{
-//		cout << "I am B" << endl;
-//		func2();
-//	}
-//	void func() // 隐藏
-//	{
-//		cout << "I am B::func" << endl;
-//		func2();
-//	}
-//	virtual void func1() //重写
-//	{
-//		cout << "I am B::func1" << endl;
-//		func2();
-//	}
-//public:
-//	virtual void func2() // 重写
-//	{
-//		cout << "I am B::func2" << endl;
-//	}
-//};
-//
-//int main()
-//{
-//	B b;
-//	A *a = new B();
-//
-//	b.func();
-//	b.func1();
-//	a->func();
-//	a->func1();
-//
-//	return 0;
-//}
+class A
+{
+public:
+	A()
+	{
+		cout << "I am A" << endl;
+		func2(); // 此时B类对象还未初始化vtable, vptr指向的是A类的vtable，里面全是A的成员函数
+	}
+	void func()
+	{
+		cout << "I am A::func" << endl;
+		func2();
+	}
+	virtual void func1()
+	{
+		cout << "I am A::func1" << endl;
+		func2();
+	}
+private:
+	virtual void func2()
+	{
+		cout << "I am A::func2" << endl;
+	}
+};
+class B : public A
+{
+public:
+	B()
+	{
+		cout << "I am B" << endl;
+		func2();
+	}
+	void func() // 隐藏
+	{
+		cout << "I am B::func" << endl;
+		func2();
+	}
+	virtual void func1() //重写
+	{
+		cout << "I am B::func1" << endl;
+		func2();
+	}
+public:
+	virtual void func2() // 重写
+	{
+		cout << "I am B::func2" << endl;
+	}
+};
+
+int main()
+{
+	B b;
+	A *a = new B();
+
+	b.func();
+	b.func1();
+	a->func();
+	a->func1();
+
+	return 0;
+}
 
 //#include <vector>
 //
@@ -143,16 +143,96 @@ using namespace std;
 //	return 0;
 //}
 
-int main()
-{
+//int main()
+//{
+//
+//	//vector<const int&> arr1;
+//	vector<int*> arr2;
+//	vector<int> arr3;
+//	int *val;
+//	int*& a = val;
+//
+//	const int& * const  b;
+//
+//	return 0;
+//}
 
-	//vector<const int&> arr1;
-	vector<int*> arr2;
-	vector<int> arr3;
-	int *val;
-	int*& a = val;
+//class A
+//{
+//public:
+//	A(): a(10)
+//	{
+//	}
+//	A(const A* ptr)
+//	{
+//		a = ptr->a;
+//	}
+//
+//	inline virtual void func()
+//	{
+//
+//	}
+//
+//	int a;
+//};
+//
+//int main()
+//{
+//	A a1;
+//
+//	A a2(&a1);
+//
+//	cout << a1.a << ' ' << a2.a;
+//
+//	return 0;
+//}
 
-	const int& * const  b;
-
-	return 0;
-}
+//class A
+//{
+//public:
+//	A()
+//		:ptr(new int(10))
+//	{
+//		cout << "I am A()" << endl;
+//		Print();
+//	}
+//	virtual ~A()
+//	{
+//		cout << "I am ~A()" << endl;
+//	}
+//
+//	virtual void Print()
+//	{
+//		cout << "A: " << * ptr << endl;
+//	}
+//
+//	int* ptr;
+//};
+//class B : public A
+//{
+//public:
+//	B()
+//		:pptr(new int(20))
+//	{
+//		cout << "I am B()" << endl;
+//		Print();
+//	}
+//	virtual ~B()
+//	{
+//		cout << "I am ~B()" << endl;
+//	}
+//
+//	virtual void Print()
+//	{
+//		cout << "B: " << *pptr << endl;
+//	}
+//
+//	int* pptr;
+//};
+//
+//int main()
+//{
+//	B b;
+//
+//	return 0;
+//}
