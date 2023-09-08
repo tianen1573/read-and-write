@@ -1,3 +1,10 @@
 #pragma once
 
-int val;
+#include<string.h>
+
+typedef struct {
+
+	string name;
+
+	int      age;
+}Test, * pTest;
