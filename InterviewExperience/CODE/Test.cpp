@@ -238,14 +238,29 @@ using namespace std;
 //}
 
 
-#include "a.h"
+//#include "a.h"
 #include "b.h"
+
+bool func(int x = 1, int y = 1)
+{
+	cout << "func: " << x + y << endl;
+	return x + y;
+}
+//void func(){}
+void func(int x = 1)
+{
+
+}
 
 int main()
 {
 
-	val = 10;
-	cout << val;
+	//val = 10;
+	//cout << val;
+
+	//func();
+	// 函数定义的函数头， 必须和对应的函数声明的函数头相同，否则就是函数重载
 
 	return 0;
 }
+
