@@ -238,29 +238,71 @@ using namespace std;
 //}
 
 
-//#include "a.h"
-#include "b.h"
+////#include "a.h"
+//#include "b.h"
+//
+//bool func(int x = 1, int y = 1)
+//{
+//	cout << "func: " << x + y << endl;
+//	return x + y;
+//}
+////void func(){}
+//void func(int x = 1)
+//{
+//
+//}
+//
+//int main()
+//{
+//
+//	//val = 10;
+//	//cout << val;
+//
+//	//func();
+//	// 函数定义的函数头， 必须和对应的函数声明的函数头相同，否则就是函数重载
+//
+//	return 0;
+//}
 
-bool func(int x = 1, int y = 1)
-{
-	cout << "func: " << x + y << endl;
-	return x + y;
-}
-//void func(){}
-void func(int x = 1)
-{
 
-}
-
-int main()
-{
-
-	//val = 10;
-	//cout << val;
-
-	//func();
-	// 函数定义的函数头， 必须和对应的函数声明的函数头相同，否则就是函数重载
-
-	return 0;
-}
-
+//string tmp;
+//string GetIntArryString(vector<int>& Data)
+//{
+//	string strRet = "";
+//	const char* szIndex = "0123456789ABCDEF";
+//	int nZeroCount = 0;
+//	int nMask = 0xF;
+//	for (int i = 0; i < Data.size() * 8; ++i)
+//	{
+//		int nPos = (7 - i % 8) * 4;
+//		uint8_t uValue = (Data[i / 8] & (nMask << nPos)) >> nPos;
+//		tmp.push_back(uValue + '0');
+//		if ((uValue && nZeroCount) || (nZeroCount == ('z' - 'a' + 2)))
+//		{
+//			strRet.push_back((nZeroCount > 1 ? ('a' + nZeroCount - 2) : '0'));
+//			nZeroCount = 0;
+//		}
+//		if (!uValue)
+//		{
+//			nZeroCount++;
+//		}
+//		else
+//		{
+//			strRet.push_back(szIndex[uValue]);
+//		}
+//	}
+//	if (nZeroCount > 0)
+//	{
+//		strRet.push_back((nZeroCount > 1 ? ('a' + nZeroCount - 2) : '0'));
+//
+//	}
+//	return strRet;
+//}
+//
+//int main()
+//{
+//	vector<int> arr = { 16, 17};
+//	GetIntArryString(arr);
+//
+//	return 0;
+//}
