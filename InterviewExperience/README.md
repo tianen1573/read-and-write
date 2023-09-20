@@ -24,7 +24,7 @@
 >     int mystrcmp(const PSTR, const PSTR);
 >     const PSTR != const char*;
 >     const PSTR == char* const;
->                         
+>                             
 >     #define char* dPSTR
 >     const dPSTR == const char*
 >     ~~~

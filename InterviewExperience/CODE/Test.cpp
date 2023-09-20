@@ -306,3 +306,100 @@ using namespace std;
 //
 //	return 0;
 //}
+
+//int main()
+//{
+//
+//	double d1 = -0;
+//	double d2 = +0;
+//
+//	int* p = (int*)&d1;
+//
+//	cout << *(p) << ' ' << *(p + 1) << endl; // 取出两个字节
+//	cout << (int&)d1 << endl; // 一个
+//	cout << *(int*)&d1 << endl; // 一个
+//	if ((int&)d1 == (int&)d2)
+//		cout << "d1 == d2" << endl;
+//
+//	return 0;
+//}
+
+
+///*统计一个文件里各个字符出现的次数,这里只统计了26个字母,如果还有更多的字符的话,将数组再扩大就行了*/
+//#include<stdio.h>
+//#include<math.h>
+//void stat(char* file, int* statistic, int n)
+//{
+//	int i = 0;
+//	while (i++ < n)
+//		statistic[file[i - 1] - 97]++;
+//}
+//int main()
+//{
+//	char file[100] = { 0 };
+//	int statistic[26] = { 0 };
+//	int j = 0;
+//	FILE* fp;
+//	if ((fp = fopen("1.txt", "r")) == NULL)
+//	{
+//		printf("can't open 1.txt");
+//		return 1;
+//	}
+//	while (!feof(fp))
+//	{
+//		int i = fread(file, 1, 100, fp);
+//		j += i;
+//		stat(file, statistic, i);
+//	}
+//	fclose(fp);
+//	
+//	for (int i = 0; i < 26; i++)
+//		printf("%c:%d\n", 97 + i, statistic[i]);
+//	cout << "charCnt: " << j;
+//	return 0;
+//}
+
+
+typedef struct VAL
+{
+	int a;
+	char b;
+private:
+	int c;
+public:
+	VAL()
+	{
+		a = b = c = 0;
+	}
+	bool operator==(const VAL& v)
+	{
+		if (a != v.a) return false;
+		if (b != v.b) return false;
+		if (c != v.c) return false;
+
+		return true;
+	}
+	friend bool isEqual(const VAL& v1, const VAL& v2);
+} VAl;
+
+bool isEqual(const VAL& v1, const VAL& v2)
+{
+	if (v1.a != v2.a) return false;
+	if (v1.b != v2.b) return false;
+	if (v1.c != v2.c) return false;
+
+	return true;
+}
+
+int main()
+{
+	VAL v1, v2;
+
+	if (v1 == v2)
+		cout << "v1 == v2" << endl;
+	
+	if (isEqual(v1, v2))
+		cout << "V1 == V2";
+
+	return 0;
+}
