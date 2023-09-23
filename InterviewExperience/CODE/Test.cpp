@@ -360,46 +360,76 @@ using namespace std;
 //}
 
 
-typedef struct VAL
+//typedef struct VAL
+//{
+//	int a;
+//	char b;
+//private:
+//	int c;
+//public:
+//	VAL()
+//	{
+//		a = b = c = 0;
+//	}
+//	bool operator==(const VAL& v)
+//	{
+//		if (a != v.a) return false;
+//		if (b != v.b) return false;
+//		if (c != v.c) return false;
+//
+//		return true;
+//	}
+//	friend bool isEqual(const VAL& v1, const VAL& v2);
+//} VAl;
+//
+//bool isEqual(const VAL& v1, const VAL& v2)
+//{
+//	if (v1.a != v2.a) return false;
+//	if (v1.b != v2.b) return false;
+//	if (v1.c != v2.c) return false;
+//
+//	return true;
+//}
+//
+//int main()
+//{
+//	VAL v1, v2;
+//
+//	if (v1 == v2)
+//		cout << "v1 == v2" << endl;
+//	
+//	if (isEqual(v1, v2))
+//		cout << "V1 == V2";
+//
+//	return 0;
+//}
+
+class Singleton
 {
-	int a;
-	char b;
-private:
-	int c;
 public:
-	VAL()
-	{
-		a = b = c = 0;
-	}
-	bool operator==(const VAL& v)
-	{
-		if (a != v.a) return false;
-		if (b != v.b) return false;
-		if (c != v.c) return false;
+    static Singleton* GetInstance()
+    {
+        return m_instance;
+    }
+    // 构造函数私有
+    Singleton() {};
+private:
+    
 
-		return true;
-	}
-	friend bool isEqual(const VAL& v1, const VAL& v2);
-} VAl;
+    // C++98 防拷贝
+    Singleton(Singleton const&);
+    Singleton& operator=(Singleton const&);
+    // or
+    // C++11
+    //Singleton(Singleton const&) = delete;
+    //Singleton& operator=(Singleton const&) = delete;
 
-bool isEqual(const VAL& v1, const VAL& v2)
-{
-	if (v1.a != v2.a) return false;
-	if (v1.b != v2.b) return false;
-	if (v1.c != v2.c) return false;
+    static Singleton* m_instance;
+};
 
-	return true;
-}
+Singleton* Singleton::m_instance = new Singleton();
 
 int main()
 {
-	VAL v1, v2;
-
-	if (v1 == v2)
-		cout << "v1 == v2" << endl;
-	
-	if (isEqual(v1, v2))
-		cout << "V1 == V2";
-
-	return 0;
+    return 0;
 }
